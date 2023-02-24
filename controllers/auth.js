@@ -1,16 +1,19 @@
+//packages
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const passport = require('../lib/passportConfig')
 
+
+//signup - GET
 exports.auth_signup_get = (req,res) =>{
     res.render('auth/signup')
 }
 
+
+//signup - POST
 exports.auth_signup_post = (req,res) =>{
     let user = new User(req.body)
-    let hash = bcrypt.hashSync(req.body.password , 10)
-    console.log(hash)
-
+    let hash = bcrypt.hashSync(req.body.password , 8)
     user.password = hash
 
     user.save()
@@ -23,12 +26,14 @@ exports.auth_signup_post = (req,res) =>{
     })
 } 
 
+
+//signin - GET
 exports.auth_signin_get = (req,res) =>{
     res.render('auth/signin')
 }
 
 
-// authonticating for sigin
+// authonticating for sigin -POST
 exports.auth_signin_post = passport.authenticate('local' , {
     successRedirect: '/',
     failureRedirect: '/auth/signin'
