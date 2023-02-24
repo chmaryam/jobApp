@@ -2,11 +2,10 @@
 const express = require('express')
 const router = express.Router();
 
-const layoutControl = require('../controllers/layout')
+const userControl = require('../controllers/users')
 
 //calling API's
-router.get('/', layoutControl.layout_get)
-
+router.get('/index', userControl.index_get)
 
 
 
