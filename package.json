@@ -1,4 +1,5 @@
 {
+
   "name": "jobapp",
   "version": "1.0.0",
   "description": "",
@@ -18,6 +19,9 @@
     "url": "https://github.com/JEHANALIK/jobApp/issues"
   },
   "homepage": "https://github.com/JEHANALIK/jobApp#readme",
+
+
+
   "dependencies": {
     "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
