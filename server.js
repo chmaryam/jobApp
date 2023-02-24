@@ -25,7 +25,7 @@ app.use(expressLayouts)
 
 
 //import routes
-
+const layoutRouter = require('./routes/layout')
 
 
 //uses the session library and sort our session
@@ -40,6 +40,7 @@ app.use(expressLayouts)
 
 
 //mount route
+app.use('/' , layoutRouter)
 
 // Starting the server and listening for incoming requests on the specified ports
 app.listen(PORT, ()=>{
