@@ -25,21 +25,22 @@ app.use(expressLayouts)
 
 
 //import routes
-
+const layoutRouter = require('./routes/layout')
 
 
 //uses the session library and sort our session
-app.use(session({
-    secret: 'supersecuresecret!',
-    saveUninitialized: true,
-    resave: false,
-    cookie: {maxAge: 604800}
-}))
-app.use(passport.initialize())
-app.use(passport.session())
+// app.use(session({
+//     secret: 'supersecuresecret!',
+//     saveUninitialized: true,
+//     resave: false,
+//     cookie: {maxAge: 604800}
+// }))
+// app.use(passport.initialize())
+// app.use(passport.session())
 
 
 //mount route
+app.use('/' , layoutRouter)
 
 // Starting the server and listening for incoming requests on the specified ports
 app.listen(PORT, ()=>{
@@ -51,4 +52,19 @@ mongoose.set('strictQuery', false)
 
 //set engine - look into the views folder to ejs files
 app.set('view engine' , 'ejs')
+
+
+//database connection
+const dbURI = process.env.DATABASE_URI //we put this instead of putting the db because we want to ignore it so we take it from .env 
+
+mongoose.connect(dbURI , {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+
+},
+// Callback function that will be executed once the connection is established
+()=>{
+    console.log("MongoDB Connected")
+})
+
 
