@@ -28,6 +28,7 @@ app.use(expressLayouts)
 const layoutRouter = require('./routes/layout')
 const userRouter = require('./routes/user')
 const authRouter = require('./routes/auth')
+const jobRouter = require('./routes/job')
 
 //uses the session library and sort our session
 app.use(session({
@@ -44,6 +45,7 @@ app.use(session({
 app.use('/' , layoutRouter)
 app.use('/' , userRouter)
 app.use('/', authRouter)
+app.use('/', jobRouter)
 
 // Starting the server and listening for incoming requests on the specified ports
 app.listen(PORT, ()=>{
