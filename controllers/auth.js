@@ -35,7 +35,7 @@ exports.auth_signin_get = (req,res) =>{
 
 // authonticating for sigin -POST
 exports.auth_signin_post = passport.authenticate('local' , {
-    successRedirect: '/',
+    successRedirect: '/index', //this is like the home page
     failureRedirect: '/auth/signin'
 })
 
