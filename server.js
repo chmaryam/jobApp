@@ -53,7 +53,7 @@ app.use('/', applicantRouter)
 
 // Starting the server and listening for incoming requests on the specified ports
 app.listen(PORT, ()=>{
-    console.log(`Blog app is running on ${PORT}`)
+    console.log(`Job app is running on ${PORT}`)
 })
 
 //Ignore warnings
