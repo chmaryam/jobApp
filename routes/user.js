@@ -6,8 +6,7 @@ const userControl = require('../controllers/users')
 
 //calling API's
 router.get('/index', userControl.index_get)
-router.get ('/user/edit',userControl.user_update_get)
-router.get ('/user/edit',userControl.user_update_post)
+
 
 
 
