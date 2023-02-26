@@ -29,6 +29,7 @@ const layoutRouter = require('./routes/layout')
 const userRouter = require('./routes/user')
 const authRouter = require('./routes/auth')
 const jobRouter = require('./routes/job')
+const applicantRouter = require('./routes/applicant')
 
 //uses the session library and sort our session
 app.use(session({
@@ -46,6 +47,7 @@ app.use('/' , layoutRouter)
 app.use('/' , userRouter)
 app.use('/', authRouter)
 app.use('/', jobRouter)
+app.use('/', applicantRouter)
 
 // Starting the server and listening for incoming requests on the specified ports
 app.listen(PORT, ()=>{

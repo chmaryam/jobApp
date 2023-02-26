@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const applicantSchema = mongoose.Schema({
     phone: String,
+    CV: String,
     User: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
@@ -12,7 +13,7 @@ const applicantSchema = mongoose.Schema({
 })
 
 //Model
-const Applicant = mongoose.model('Applicant' , articleSchema)
+const Applicant = mongoose.model('Applicant' , applicantSchema)
 
 //export
 module.exports = Applicant
