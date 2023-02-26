@@ -15,4 +15,10 @@ router.post('/auth/signin' , authControl.auth_signin_post)
 
 router.get('/auth/logout' , authControl.auth_logout_get)
 
+router.get ('/auth/edit',authControl.auth_update_get)
+router.post ('/auth/edit',authControl.auth_update_post)
+
+router.get('/auth/changePass',authControl.auth_changePass_get)
+router.post('/auth/changePass', authControl.auth_changePass_post)
+
 module.exports = router
