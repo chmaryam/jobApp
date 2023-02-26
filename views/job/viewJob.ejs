@@ -1,28 +1,19 @@
-<h1>Jobs</h1>
-
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Salary</th>
-        <th>orgnization</th>
-        <th>description</th>
-        <th>timeType</th>
-        <th>location</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-
+<div class="row">
     <% jobs.forEach(function(job) { %>
-        <tr>
-            <td><%= job.title %>  </td>
-            <td> <%= job.Salary %> </td>
-            <td> <%= job.orgnization %> </td>
-            <td> <%= job.description %> </td>
-            <td> <%= job.timeType %> </td>
-            <td> <%= job.location %> </td>
-        </td>
-    </tr>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Title: <%= job.title %> </h5>
+          <p class="card-text">
+            Salary: <%= job.Salary %> <br>
+            orgnization: <%= job.orgnization %><br>
+            Time Type: <%= job.timeType %><br>
+          </p>
+          <button type="submit" class="btn btn-outline-secondary btn-sm">read More</button>
+          <button type="submit" class="btn btn-outline-secondary btn-md">Edit</button>
+          <button type="submit" class="btn btn-outline-secondary btn-md">Delete</button>
+        </div>
+      </div>
+    </div>
     <% }) %>
-  
-
-</table>
+  </div>
