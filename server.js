@@ -23,6 +23,8 @@ const expressLayouts = require('express-ejs-layouts')
 // look into views folder with a file name called layout.ejs
 app.use(expressLayouts)
 
+// most important thing 
+require('dotenv').config();
 
 //import routes
 const layoutRouter = require('./routes/layout')
@@ -63,6 +65,7 @@ app.set('view engine' , 'ejs')
 
 //database connection
 const dbURI = process.env.DATABASE_URI //we put this instead of putting the db because we want to ignore it so we take it from .env 
+// console.log(process.env.DATABASE_URI)
 
 mongoose.connect(dbURI , {
     useNewUrlParser: true,
