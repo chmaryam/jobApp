@@ -2,7 +2,10 @@ const express = require('express')
 
 const router = express.Router()
 
+
 const authControl = require('../controllers/auth')
+
+router.use(express.urlencoded({ extended: true }));
 
 router.get('/auth/signup' , authControl.auth_signup_get)
 router.post('/auth/signup' , authControl.auth_signup_post)
