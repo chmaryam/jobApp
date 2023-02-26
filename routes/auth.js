@@ -2,8 +2,6 @@ const express = require('express')
 
 const router = express.Router()
 
-
-
 const authControl = require('../controllers/auth')
 
 router.get('/auth/signup' , authControl.auth_signup_get)
