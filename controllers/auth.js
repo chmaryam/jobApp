@@ -13,6 +13,7 @@ exports.auth_signup_get = (req,res) =>{
 //signup - POST
 exports.auth_signup_post = (req,res) =>{
     let user = new User(req.body)
+    console.log(user)
     let hash = bcrypt.hashSync(req.body.password , 8)
     user.password = hash
 
@@ -20,7 +21,7 @@ exports.auth_signup_post = (req,res) =>{
     .then(() =>{
         res.redirect('/auth/signin')
     })
-    .catch(err =>{
+    .catch((err) =>{
         console.log(err)
         res.send('missing input or wrong! please try again!')
     })
