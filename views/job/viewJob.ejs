@@ -1,28 +1,28 @@
+<h1>Jobs</h1>
 
-<h1>hello world</h1>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="jobpost">
-   
-    </div>
-    <div class="jobpost1">
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Salary</th>
+        <th>orgnization</th>
+        <th>description</th>
+        <th>timeType</th>
+        <th>location</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
 
-    </div>
-       <div class="jobpost2">
+    <% jobs.forEach(function(job) { %>
+        <tr>
+            <td><%= job.title %>  </td>
+            <td> <%= job.Salary %> </td>
+            <td> <%= job.orgnization %> </td>
+            <td> <%= job.description %> </td>
+            <td> <%= job.timeType %> </td>
+            <td> <%= job.location %> </td>
+        </td>
+    </tr>
+    <% }) %>
+  
 
-       </div>
-       <div class="jobpost3">
-
-       </div>
-</body>
-</html>
-
-<h1>hello world</h1>
-
+</table>

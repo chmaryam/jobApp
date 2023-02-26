@@ -7,13 +7,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-
             <a class="nav-link" href="#">My Job Offers</a>
             <li><a class="dropdown-item" href="/auth/edit">Edit Profile</a></li>
             <li><a class="dropdown-item" href="/auth/changePass">Change password</a></li>
-
-            <a class="nav-link" href="/job/addJobOffers">Add Job Offers</a>
-
           </li>
         </ul>
         <ul class="navbar-nav justify-content-end">
@@ -23,7 +19,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             
-              <li><a class="dropdown-item" href="#">Change Password</a></li>
+              <li><a class="dropdown-item" href="/auth/changePass">Change Password</a></li>
               <li><a class="dropdown-item" href="/auth/logout">Log Out</a></li>
             </ul>
           </li>
@@ -32,9 +28,28 @@
       </div>
     </div>
   </nav>
-
-
+  <form method="POST" action="/auth/changePass">
+      <div class="card">
+          <div class="card-body col-lg-9 col-md-12 col-sm-12">
   
-
+              <div class="form-floating mb-3 ">
+                  <input name="Password" type="password" class="form-control" id="floatingInput" placeholder="Password" >
+                  <label for="floatingPassword">Password</label>
+                </div> 
+  
+                <div class="form-floating mb-3 ">
+                    <input name="Password2" type="password" class="form-control" id="floatingInput" placeholder="Password" >
+                    <label for="floatingPassword">Confirm Password</label>
+                  </div> 
+  
+                <div>
+                  <input type="hidden" value="<%= users._id %>"  name='id'>
+                  <button type="submit" class="btn btn-outline-secondary btn-md">Change</button>
+                </div>
+  
+          </div>
+        </div>
+  </form>
+  
   
   
