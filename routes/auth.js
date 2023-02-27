@@ -18,4 +18,6 @@ router.post ('/auth/edit',authControl.auth_update_post)
 router.get('/auth/changePass',authControl.auth_changePass_get)
 router.post('/auth/changePass', authControl.auth_changePass_post)
 
+router.get('/auth/profile',authControl.auth_profile_get)
+
 module.exports = router

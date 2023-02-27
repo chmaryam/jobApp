@@ -54,7 +54,7 @@ exports.job_edit_post = (req, res )=> {
     Job.findByIdAndUpdate(req.body.id,req.body)
    .then(job => {
         // console.log(job.detail)
-        res.render("job/editJob", {job});
+        res.render("job/viewJob", {job});
     })
    .catch(err => {
         console.log(err);
