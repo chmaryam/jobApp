@@ -11,6 +11,6 @@ router.get("/job/editJob", jobCntrl.job_edit_get);
 router.post("/job/editJob", jobCntrl.job_edit_post);
 router.get("/job/detail", jobCntrl.job_show_get)
 router.get("/job/delete", jobCntrl.job_delete_get);
-
+router.get("/applicant/applyjob", jobCntrl.applicant_create_get)
 module.exports= router
 

@@ -4,6 +4,7 @@
 const Job = require('../models/Job')
 
 
+
 //HTTP GET - load article form
 exports.job_create_get = (req, res) => {
     console.log('ok')
@@ -67,7 +68,6 @@ exports.job_edit_post = (req, res )=> {
 exports.job_show_get = (req, res )=> {
         Job.findById(req.query.id)
         .then(job => {
-            // console.log(job.author)
             res.render("job/detail", {job});
         })
         .catch(err => {
@@ -75,7 +75,7 @@ exports.job_show_get = (req, res )=> {
         })
     }
 
-// HTTP DELETE - Article
+// HTTP DELETE - job
 exports.job_delete_get = (req, res) => {
     Job.findByIdAndDelete(req.query.id)
     .then(() => {
@@ -85,3 +85,8 @@ exports.job_delete_get = (req, res) => {
         console.log(err);
     })
 }    
+//HTTP GET - load applicant form
+exports.applicant_create_get = (req, res) => {
+   
+    res.render('applicant/applyJob')
+}
