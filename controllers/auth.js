@@ -36,7 +36,7 @@ exports.auth_signin_get = (req, res) => {
 
 // authonticating for sigin -POST
 exports.auth_signin_post = passport.authenticate('local', {
-    successRedirect: '/index', //this is like the home page
+    successRedirect: '/job/viewJob', //this is like the home page
     failureRedirect: '/auth/signin'
 })
 
@@ -69,7 +69,7 @@ exports.auth_update_post = (req, res) => {
     console.log(req.body.id)
     User.findByIdAndUpdate(req.body.id, req.body)
         .then(() => {
-            res.redirect('/auth/edit')
+            res.redirect("/job/viewJob")
         })
         .catch(err => {
             console.log(err)

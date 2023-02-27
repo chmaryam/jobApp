@@ -17,7 +17,7 @@ exports.job_create_get = (req, res) => {
 
 job.save()
 .then(() => {
-    res.redirect("/job/addJobOffers")
+    res.redirect("/job/viewJob")
 })
 .catch((err) => {
     console.log(err);
