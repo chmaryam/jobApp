@@ -5,13 +5,14 @@
         <div class="card-body">
           <h5 class="card-title">Title: <%= job.title %> </h5>
           <p class="card-text">
-            Salary: <%= job.Salary %> <br>
-            orgnization: <%= job.orgnization %><br>
+            Salary: <%= job.salary %> <br>
+            orgnization: <%= job.organization%><br>
             Time Type: <%= job.timeType %><br>
           </p>
-          <button type="submit" class="btn btn-outline-secondary btn-sm">read More</button>
-          <button type="submit" class="btn btn-outline-secondary btn-md">Edit</button>
-          <button type="submit" class="btn btn-outline-secondary btn-md">Delete</button>
+          <a href="/job/editJob?id=<%= job._id %>">Edit</a>
+          <!-- <button type="submit" class="btn btn-outline-secondary btn-sm">read More</button> -->
+          <!-- <button type="submit" class="btn btn-outline-secondary btn-md">Edit</button>
+          <button type="submit" class="btn btn-outline-secondary btn-md">Delete</button> -->
         </div>
       </div>
     </div>

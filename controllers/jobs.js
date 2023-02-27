@@ -24,17 +24,7 @@ job.save()
     res.send("Please try again later!");
 })
  }
-// // HTTP GET - job By ID
-// exports.job_view_get = (req, res )=> {
-//      Job.findById(req.query.id)
-//     .then(job => {
-//          console.log(job.viewJob)
-//          res.render("job/viewJob", {job});
-//      })
-//     .catch(err => {
-//          console.log(err);
-//      })
-//  }
+
 // HTTP GET - Index
  exports.job_view_get = (req, res) => {
      Job.find()
@@ -45,3 +35,29 @@ job.save()
         console.log(err);
     })
 }
+
+// HTTP GET - job By ID
+exports.job_edit_get = (req, res )=> {
+    Job.findByIdAndUpdate(req.query.id)
+   .then(job => {
+        // console.log(job.detail)
+        res.render("job/editJob", {job});
+    })
+   .catch(err => {
+        console.log(err);
+    })
+}
+
+// HTTP POST- JOb by ID
+
+exports.job_edit_post = (req, res )=> {
+    Job.findByIdAndUpdate(req.body.id,req.body)
+   .then(job => {
+        // console.log(job.detail)
+        res.render("job/editJob", {job});
+    })
+   .catch(err => {
+        console.log(err);
+    })
+}
+
