@@ -7,6 +7,11 @@ const jobSchema = mongoose.Schema({
     description: {type: String},
     timeType: {type: String, required: true},
     location: {type: String, required: true},
+    applicant : [{
+        type : mongoose.Schema.Types.ObjectId,
+        // taking the article name and spel from models/article lfrom model
+        ref :  'Applicant '
+    }]
  
 }, 
 {

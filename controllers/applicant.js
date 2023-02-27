@@ -1,9 +1,7 @@
 const Applicant = require('../models/Applicant')
 
-exports.applicant_create_get = (req, res) => {
+exports.applicant_applyJob_get = (req, res) => {
     res.render('applicant/applyJob')
-    // for getting all of the authors - this step after we did the author
-    //it was only rendering now for the author we have to output the authors
     // Applicant.find()
     // .then((applicant) =>{
     //     res.render('applicant/applyJob' , {applicant})
@@ -11,5 +9,19 @@ exports.applicant_create_get = (req, res) => {
     // .catch((err) =>{
     //     console.log(err)
     // })
-    
+
+}
+
+exports.applicant_applyJob_post = (req, res) => {
+    let applicant = new Applicant(req.body)
+        // applicant['job']= req.query.id
+        // console.log(req.body.job_id)
+        // applicant.save()
+        .then(() => {
+            res.redirect('/job/viewJob')
+        })
+        .catch((err) => {
+            console.log(err)
+            res.send('missing input or wrong! please try again!')
+        })
 }

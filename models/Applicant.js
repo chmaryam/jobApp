@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 const applicantSchema = mongoose.Schema({
     phone: String,
     CV: String,
-    User: [{
+    job: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'Job'
     }]
 
 },{
