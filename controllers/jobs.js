@@ -59,5 +59,29 @@ exports.job_edit_post = (req, res )=> {
    .catch(err => {
         console.log(err);
     })
+    
+
+
 }
 
+exports.job_show_get = (req, res )=> {
+        Job.findById(req.query.id)
+        .then(job => {
+            // console.log(job.author)
+            res.render("job/detail", {job});
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
+// HTTP DELETE - Article
+exports.job_delete_get = (req, res) => {
+    Job.findByIdAndDelete(req.query.id)
+    .then(() => {
+        res.redirect("/job/viewJob")
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}    
