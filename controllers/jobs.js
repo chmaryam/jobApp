@@ -85,7 +85,20 @@ exports.job_delete_get = (req, res) => {
     })
 }    
 //HTTP GET - load applicant form
-exports.applicant_create_get = (req, res) => {
+// exports.applicant_create_get = (req, res) => {
    
-    res.render('applicant/applyJob')
+//     res.render('applicant/applyJob')
+// }
+
+//  HTTP GET - load user jop offers
+exports.job_viewJobOffer_get =(req,res) => {
+    Job.find() 
+    .then(jobs => {
+        res.render('job/MyJobOffers', { jobs }) 
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send('please try again later')
+    })
+
 }
