@@ -16,7 +16,7 @@ exports.applicant_applyJob_post = (req, res) => {
     let applicant = new Applicant(req.body)
         // applicant['job']= req.query.id
         // console.log(req.body.job_id)
-        // applicant.save()
+        applicant.save()
         .then(() => {
             res.redirect('/job/viewJob')
         })

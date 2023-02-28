@@ -12,10 +12,9 @@ exports.job_create_get = (req, res) => {
 }
 // HTTP post - addjobOffer
  exports.job_create_post = (req, res) => {
- console.log(req.body);
+ console.log('Job Controller Post Body: ', req.body);
  let job = new Job(req.body);
 //   save
-
 job.save()
 .then(() => {
     res.redirect("/job/viewJob")
