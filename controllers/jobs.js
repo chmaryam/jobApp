@@ -17,7 +17,7 @@ exports.job_create_get = (req, res) => {
 //   save
 job.save()
 .then(() => {
-    res.redirect("/job/viewJob")
+    res.redirect("MyJobOffers")
 })
 .catch((err) => {
     console.log(err);
@@ -25,8 +25,8 @@ job.save()
 })
  }
 
-// HTTP GET - Index
- exports.job_view_get = (req, res) => {
+// HTTP GET - User home
+ exports.job_viewJobPage_get = (req, res) => {
      Job.find()
      .then(jobs => {
          res.render("job/viewJob", {jobs}) // job: addjobOffers
@@ -84,11 +84,6 @@ exports.job_delete_get = (req, res) => {
         console.log(err);
     })
 }    
-//HTTP GET - load applicant form
-// exports.applicant_create_get = (req, res) => {
-   
-//     res.render('applicant/applyJob')
-// }
 
 //  HTTP GET - load user jop offers
 exports.job_viewJobOffer_get =(req,res) => {
@@ -102,3 +97,4 @@ exports.job_viewJobOffer_get =(req,res) => {
     })
 
 }
+
