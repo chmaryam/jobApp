@@ -6,7 +6,11 @@ const applicantSchema = mongoose.Schema({
     job: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Job'
-    }]
+    }],
+    user: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }],
 
 },{
     timestamps: true
