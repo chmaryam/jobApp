@@ -27,6 +27,7 @@ exports.job_create_post = (req, res) => {
 // HTTP GET - User home
 exports.job_viewJobPage_get = (req, res) => {
     Job.find()
+    // .populate('applicant')
         .then(jobs => {
             res.render("job/viewJob", { jobs }) // job: addjobOffers
         })
